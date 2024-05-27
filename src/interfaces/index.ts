@@ -10,6 +10,7 @@ interface ITask {
     description: string
     date: string
     priorityLevel: string
+    isCompleted: boolean
     userId: string
 }
 

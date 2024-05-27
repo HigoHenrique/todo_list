@@ -9,6 +9,7 @@ class Task extends Model{
     declare description: string
     declare date: string
     declare priorityLevel: string
+    declare isCompleted: boolean
     declare userId: string
 }
 
@@ -34,6 +35,11 @@ Task.init({
       priorityLevel:{
         type: sequelize.STRING,
         allowNull: false,
+      },
+      isCompleted:{
+        type: sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
       },
       userId:{
         type: sequelize.INTEGER,

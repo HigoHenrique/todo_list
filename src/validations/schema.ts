@@ -10,6 +10,7 @@ const task = joi.object({
     description:joi.string().min(10).required(),
     date: joi.string().min(6).max(10).required(),
     priorityLevel: joi.string().valid('alta', 'media', 'baixa').required(),
+    isCompleted: joi.boolean(),
     userId: joi.number().integer().required(),
 })
 
