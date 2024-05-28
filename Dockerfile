@@ -1,13 +1,17 @@
-FROM node:16.14-alpine
+FROM node:alpine
 
 WORKDIR /api-todolist
 
-COPY package* .
+COPY package.json ./
 
 RUN npm install
 
 COPY . .
 
-ENTRYPOINT [ "npm", "run" ]
+RUN npm run build
 
-CMD [ "dev" ]
+EXPOSE 3001
+
+RUN apk add --no-cache bash
+
+CMD [ "npm", "start" ]
