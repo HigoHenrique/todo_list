@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /api-todolist
+WORKDIR /app
 
 COPY package.json ./
 
